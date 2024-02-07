@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/logo-gpl.svg";
 
-const Header = () => {
+export const Header = () => {
   return (
     <div className="w-screen h-14 bg-neutral-900 flex fixed left-0 right-0 z-20 top-0">
       <div className="flex flex-row justify-start gap-4 items-center ml-7">
@@ -11,5 +11,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;

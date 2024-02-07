@@ -1,6 +1,6 @@
 import React from "react";
 
-const PlayerCard = ({
+export const PlayerCard = ({
   playerImg,
   playerName,
   teamName,
@@ -78,5 +78,3 @@ const PlayerCard = ({
     </div>
   );
 };
-
-export default PlayerCard;

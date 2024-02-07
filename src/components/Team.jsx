@@ -8,7 +8,7 @@ const groupColor = {
   d: "before:border-t-purple-500 before:bg-purple-600",
 };
 
-const Team = ({ logo, name, points, group }) => {
+export const Team = ({ logo, name, points, group }) => {
   return (
     <div className=" text-center">
       <button
@@ -34,5 +34,3 @@ const Team = ({ logo, name, points, group }) => {
     </div>
   );
 };
-
-export default Team;

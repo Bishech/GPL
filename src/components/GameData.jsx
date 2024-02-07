@@ -1,6 +1,6 @@
 import React from "react";
 
-const GameData = ({
+export const GameData = ({
   firstTeamLogo,
   secondTeamLogo,
   firstTeamPoints,
@@ -31,5 +31,3 @@ const GameData = ({
     </div>
   );
 };
-
-export default GameData;
