@@ -42,54 +42,70 @@ const groupD = [
 
 export const Home = () => {
   return (
-    <div className="flex flex-col gap-20">
-      <div className="flex flex-col gap-10 w-full px-10 justify-center">
-        <img src={listGroupA} />
-        {groupA.map((team) => (
-          <Team
-            key={team.id}
-            group={team.group}
-            name={team.name}
-            logo={team.logo}
-            points={team.points}
-          />
-        ))}
+    <div className="flex flex-col gap-20 mb-20">
+      <div className="flex flex-row gap-10 w-full px-10 justify-center items-center">
+        <div className="w-1/3 grid">
+          <img src={listGroupA} className="m-auto" />
+        </div>
+        <div className="flex flex-col gap-4 w-2/3">
+          {groupA.map((team) => (
+            <Team
+              key={team.id}
+              group={team.group}
+              name={team.name}
+              logo={team.logo}
+              points={team.points}
+            />
+          ))}
+        </div>
       </div>
-      <div className="flex flex-col gap-10 w-full px-10">
-        <img src={listGroupB} />
-        {groupB.map((team) => (
-          <Team
-            key={team.id}
-            group={team.group}
-            name={team.name}
-            logo={team.logo}
-            points={team.points}
-          />
-        ))}
+      <div className="flex flex-row gap-10 w-full px-10 justify-center items-center">
+        <div className="w-1/3">
+          <img src={listGroupB} />
+        </div>
+        <div className="flex flex-col gap-4 w-2/3">
+          {groupB.map((team) => (
+            <Team
+              key={team.id}
+              group={team.group}
+              name={team.name}
+              logo={team.logo}
+              points={team.points}
+            />
+          ))}
+        </div>
       </div>
-      <div className="flex flex-col gap-10 w-full px-10">
-        <img src={listGroupC} />
-        {groupC.map((team) => (
-          <Team
-            key={team.id}
-            group={team.group}
-            name={team.name}
-            logo={team.logo}
-            points={team.points}
-          />
-        ))}
+      <div className="flex flex-row gap-10 w-full px-10 justify-center items-center">
+        <div className="w-1/3">
+          <img src={listGroupC} />
+        </div>
+        <div className="flex flex-col gap-4 w-2/3">
+          {groupC.map((team) => (
+            <Team
+              key={team.id}
+              group={team.group}
+              name={team.name}
+              logo={team.logo}
+              points={team.points}
+            />
+          ))}
+        </div>
       </div>
-      <div className="flex flex-col gap-10 w-full px-10">
-        <img src={listGroupD} />
-        {groupD.map((team) => (
-          <Team
-            id={team.id}
-            group={team.group}
-            name={team.name}
-            logo={team.logo}
-            points={team.points}
-          />
-        ))}
+      <div className="flex flex-row gap-10 w-full px-10 justify-center items-center">
+        <div className="w-1/3">
+          <img src={listGroupD} />
+        </div>
+        <div className="flex flex-col gap-4 w-2/3">
+          {groupD.map((team) => (
+            <Team
+              key={team.id}
+              group={team.group}
+              name={team.name}
+              logo={team.logo}
+              points={team.points}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
