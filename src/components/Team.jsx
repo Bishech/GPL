@@ -11,26 +11,24 @@ const groupColor = {
 
 export const Team = ({ logo, name, points, group }) => {
   return (
-    <div className=" text-center">
-      <button className="skew-x-[-5deg]  cursor-default bg-gray-700 border-2 rounded-lg w-2/3 h-44 border-black text-white">
-        <Link to={`/team/${group}/${name}`}>
-          <div
-            className={`before:w-6 before:rounded before:content-[''] before:h-[174px] before:-top-[18px]  before:absolute before:left-0 before:border-t-[18px] before:border-b-[18px] ${groupColor[group]} w-full h-full border-2  border-black rounded-lg border-b-[18px] border-b-slate-800 border-t-[18px] border-t-slate-600 relative border-x-transparent`}
-          >
-            <div className="w-full h-full flex flex-row gap-6 px-6 justify-center items-center text-white">
-              <div>
-                <img src={logo} className="pl-2 w-36 h-36 object-cover" />
-              </div>
-              <div className="text-7xl">{name}</div>
-              <div className="flex flex-grow"></div>
-              <div>
-                <img src={logo_gpl} className="w-40 h-40 object-cover" />
-              </div>
-              <div className="text-8xl">{points}</div>
+    <button className="skew-x-[-5deg] cursor-default bg-gray-700 rounded-lg h-16 border-2 border-black relative text-white">
+      <Link to={`/team/${group}/${name}`}>
+        <div
+          className={`before:w-4 before:rounded before:h-full before:-top-[1px] after:border-y-4 after:border-black before:absolute before:left-0 before:border-t-[12px] before:border-b-[12px] ${groupColor[group]} w-full h-full  rounded-lg border-b-[12px] border-b-slate-800 border-t-[12px] border-t-slate-600 border-x-transparent`}
+        >
+          <div className="w-full h-full flex flex-row gap-6 px-6 justify-center items-center text-white">
+            <div>
+              <img src={logo} className="pl-2 w-16 h-16" />
             </div>
+            <div className="text-5xl">{name}</div>
+            <div className="flex flex-grow"></div>
+            <div>
+              <img src={logo_gpl} className="w-16 h-16" />
+            </div>
+            <div className="text-5xl">{points}</div>
           </div>
-        </Link>
-      </button>
-    </div>
+        </div>
+      </Link>
+    </button>
   );
 };
