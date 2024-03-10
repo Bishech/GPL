@@ -16,16 +16,24 @@ export const Team = ({ logo, name, points, group }) => {
         <div
           className={`before:w-4 before:rounded before:h-full before:-top-[1px] after:border-y-4 after:border-black before:absolute before:left-0 before:border-t-[12px] before:border-b-[12px] ${groupColor[group]} w-full h-full  rounded-lg border-b-[12px] border-b-slate-800 border-t-[12px] border-t-slate-600 border-x-transparent`}
         >
-          <div className="w-full h-full flex flex-row gap-6 px-6 justify-center items-center text-white">
+          <div className="w-full h-full flex flex-row gap-6 lg:px-6 px-4 justify-center items-center text-white">
             <div>
-              <img src={logo} className="pl-2 w-16 h-16" />
+              <img
+                src={logo}
+                className="pl-2 lg:w-16 md:w-10 w-8 lg:h-16 md:h-10 h-8 object-contain"
+              />
             </div>
-            <div className="text-5xl">{name}</div>
+            <div className="lg:text-4xl md:text-3xl text-xl uppercase text-wrap">
+              {name}
+            </div>
             <div className="flex flex-grow"></div>
             <div>
-              <img src={logo_gpl} className="w-16 h-16" />
+              <img
+                src={logo_gpl}
+                className="lg:w-16 md:w-10 w-8 lg:h-16 md:h-10 h-8 object-contain"
+              />
             </div>
-            <div className="text-5xl">{points}</div>
+            <div className="lg:text-4xl md:text-3xl text-xl">{points}</div>
           </div>
         </div>
       </Link>

@@ -43,11 +43,11 @@ const groupD = [
 export const Home = () => {
   return (
     <div className="flex flex-col gap-20 mb-20">
-      <div className="flex flex-row gap-10 w-full px-10 justify-center items-center">
-        <div className="w-1/3 grid">
-          <img src={listGroupA} className="m-auto" />
+      <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
+        <div className="lg:w-1/2 w-full grid">
+          <img src={listGroupA} className="m-auto w-full h-auto items-center" />
         </div>
-        <div className="flex flex-col gap-4 w-2/3">
+        <div className="flex flex-col gap-4 lg:w-1/2 w-full">
           {groupA.map((team) => (
             <Team
               key={team.id}
@@ -59,11 +59,11 @@ export const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-row gap-10 w-full px-10 justify-center items-center">
-        <div className="w-1/3">
-          <img src={listGroupB} />
+      <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
+        <div className="lg:w-1/2 w-full grid">
+          <img src={listGroupB} className="m-auto w-full h-auto items-center" />
         </div>
-        <div className="flex flex-col gap-4 w-2/3">
+        <div className="flex flex-col gap-4 lg:w-1/2 w-full">
           {groupB.map((team) => (
             <Team
               key={team.id}
@@ -75,11 +75,11 @@ export const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-row gap-10 w-full px-10 justify-center items-center">
-        <div className="w-1/3">
-          <img src={listGroupC} />
+      <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
+        <div className="lg:w-1/2 w-full grid">
+          <img src={listGroupC} className="m-auto w-full h-auto items-center" />
         </div>
-        <div className="flex flex-col gap-4 w-2/3">
+        <div className="flex flex-col gap-4 lg:w-1/2 w-full">
           {groupC.map((team) => (
             <Team
               key={team.id}
@@ -91,11 +91,11 @@ export const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-row gap-10 w-full px-10 justify-center items-center">
-        <div className="w-1/3">
-          <img src={listGroupD} />
+      <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
+        <div className="lg:w-1/2 w-full grid">
+          <img src={listGroupD} className="m-auto w-full h-auto items-center" />
         </div>
-        <div className="flex flex-col gap-4 w-2/3">
+        <div className="flex flex-col gap-4 lg:w-1/2 w-full">
           {groupD.map((team) => (
             <Team
               key={team.id}
