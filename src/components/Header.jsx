@@ -12,10 +12,12 @@ export const Header = () => {
             className="flex flex-row justify-start gap-4 items-center ml-7"
           >
             <img src={logo} className="h-10 w-10" />
-            <p className="text-xl text-white font-extra">GPL SEASON</p>
+            <p className="sm:block hidden text-xl text-white font-extra">
+              GPL SEASON 8
+            </p>
           </Link>
         </div>
-        <button className="px-8 text-xl skew-x-[-5deg] font-extra relative top-4 h-12 bg-neutral-900 hover:bg-neutral-800 border-2 rounded-lg shadow-md shadow-black border-yellow-400 text-white flex justify-end items-center mr-14">
+        <button className="px-4 text-lg sm:px-8 sm:text-xl skew-x-[-5deg] font-extra relative top-4 h-12 bg-neutral-900 hover:bg-neutral-800 border-2 rounded-lg shadow-md shadow-black border-yellow-400 text-white flex justify-end items-center mr-10 sm:mr-14">
           <div>
             <div>Войти</div>
           </div>
