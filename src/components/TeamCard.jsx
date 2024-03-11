@@ -10,7 +10,7 @@ export const TeamCard = ({ logo, players, name }) => {
           {name}
         </h1>
       </div>
-      <div className="flex md:flex-row flex-col md:gap-20 gap-6">
+      <div className="flex md:flex-row flex-col gap-20">
         {players.map((player) => (
           <Player
             playerImg={player.img}
