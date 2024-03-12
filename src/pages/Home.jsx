@@ -7,6 +7,7 @@ import listGroupC from "../assets/leader-board-group-C.png";
 import listGroupD from "../assets/leader-board-group-D.png";
 
 import { Team } from "../components/Team";
+import { Stream } from "../components/Stream";
 
 const groupA = [
   { id: 1, name: "firstTeam", group: "a", points: 0, logo: logo },
@@ -43,6 +44,9 @@ const groupD = [
 export const Home = () => {
   return (
     <div className="flex flex-col gap-20 mb-20">
+      <div className="flex items-center justify-center object-contain">
+        <Stream />
+      </div>
       <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
         <div className="lg:w-1/2 w-full grid">
           <img src={listGroupA} className="m-auto w-full h-auto items-center" />
