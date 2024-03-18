@@ -1,19 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { PlayerCard } from "../components/PlayerCard";
 import playerImg from "../assets/player-image.png";
+
+import { DefaultPlayer } from "../components/playercards/DefaultPlayer";
 
 export const PlayerInfo = () => {
   const { teamName, playerName } = useParams();
 
   return (
     <div>
-      <PlayerCard
+      <DefaultPlayer
         playerImg={playerImg}
         playerName={playerName}
         teamName={teamName}
-        matches={14}
-        victories={7}
       />
     </div>
   );
