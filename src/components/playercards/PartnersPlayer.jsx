@@ -1,7 +1,9 @@
 import React from "react";
 import { ContactPlayer } from "./ContactPlayer";
 
-export const PlayerCard = ({
+import partnersLogo from "../../assets/partners-item.png";
+
+export const PartnersPlayer = ({
   playerImg,
   playerName,
   teamName,
@@ -11,8 +13,11 @@ export const PlayerCard = ({
   return (
     <div className="flex gap-10">
       <div className="w-1/2 flex flex-col justify-center items-center">
+        <div className="w-1/2 mb-4">
+          <img src={partnersLogo} />
+        </div>
         <img src={playerImg} className="w-2/3" />
-        <p className="-mt-28 bg-white text-blue-800 text-center text-5xl w-56 h-16 flex items-center justify-center skew-x-[-5deg] shadow-lg shadow-black">
+        <p className="-mt-24 bg-white text-blue-800 text-center text-5xl w-56 h-16 flex items-center justify-center skew-x-[-5deg] shadow-lg shadow-black">
           {playerName}
         </p>
       </div>
