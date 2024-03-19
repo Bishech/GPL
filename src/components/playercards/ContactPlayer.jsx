@@ -3,7 +3,7 @@ import React from "react";
 export const ContactPlayer = ({ telegramLink, discordLink }) => {
   return (
     <div className="flex flex-col items-center">
-      <div className="text-5xl text-center text-white rotate-[-3deg] py-4">
+      <div className="lg:text-5xl text-4xl text-center text-white rotate-[-3deg] py-4">
         Связаться:
       </div>
       <div className="flex flex-row gap-x-8 content-center">
