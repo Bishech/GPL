@@ -3,6 +3,14 @@ import logo from "../assets/logo-gpl.svg";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
+  const redirect = () => {
+    window.location.replace("https://gpl.animaru.app/auth/google");
+  };
+
+  const logOut = () => {
+    localStorage.removeItem("authToken");
+  };
+
   return (
     <div className="w-screen h-14 bg-neutral-900 fixed left-0 right-0 z-20 top-0">
       <div className="w-full h-full flex items-center justify-between">
@@ -17,9 +25,16 @@ export const Header = () => {
             </p>
           </Link>
         </div>
-        <button className="px-4 text-lg sm:px-8 sm:text-xl skew-x-[-5deg] font-extra relative top-4 h-12 bg-neutral-900 hover:bg-neutral-800 border-2 rounded-lg shadow-md shadow-black border-yellow-400 text-white flex justify-end items-center mr-10 sm:mr-14">
+        <button
+          onClick={localStorage.getItem("authToken") ? logOut : redirect}
+          className="px-4 text-lg sm:px-8 sm:text-xl skew-x-[-5deg] font-extra relative top-4 h-12 bg-neutral-900 hover:bg-neutral-800 border-2 rounded-lg shadow-md shadow-black border-yellow-400 text-white flex justify-end items-center mr-10 sm:mr-14"
+        >
           <div>
-            <div>Войти</div>
+            {localStorage.getItem("authToken") ? (
+              <div>Выйти</div>
+            ) : (
+              <div>Войти</div>
+            )}
           </div>
         </button>
       </div>

@@ -8,6 +8,7 @@ import { NotFound } from "./pages/NotFound";
 import { Home } from "./pages/Home";
 import { TeamInfo } from "./pages/TeamInfo";
 import { PlayerInfo } from "./pages/PlayerInfo";
+import { Redirect } from "./pages/Redirect";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "player/:teamName/:playerName",
         element: <PlayerInfo />,
+      },
+      {
+        path: "auth/:token",
+        element: <Redirect />,
       },
     ],
   },
