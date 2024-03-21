@@ -1,13 +1,16 @@
 import React from "react";
 
 import logo from "../assets/team-logo.png";
+import gplLogo from "../assets/logo-gpl.svg";
 import listGroupA from "../assets/leader-board-group-A.png";
 import listGroupB from "../assets/leader-board-group-B.png";
 import listGroupC from "../assets/leader-board-group-C.png";
 import listGroupD from "../assets/leader-board-group-D.png";
 
 import { Team } from "../components/Team";
-import { Stream } from "../components/Stream";
+import { Footer } from "../components/Footer";
+
+// import { Stream } from "../components/Stream";
 
 const groupA = [
   { id: 1, name: "firstTeam", group: "a", points: 0, logo: logo },
@@ -34,7 +37,7 @@ const groupC = [
 ];
 
 const groupD = [
-  { id: 1, name: "firstTeam", group: "d", points: 0, logo: logo },
+  { id: 1, name: "GPL eSports", group: "d", points: 0, logo: gplLogo },
   { id: 2, name: "secondTeam", group: "d", points: 0, logo: logo },
   { id: 3, name: "thirdTeam", group: "d", points: 0, logo: logo },
   { id: 4, name: "fourthTeam", group: "d", points: 0, logo: logo },
@@ -44,9 +47,9 @@ const groupD = [
 export const Home = () => {
   return (
     <div className="flex flex-col gap-20 mb-20">
-      <div className="flex items-center justify-center object-contain">
+      {/* <div className="flex items-center justify-center object-contain">
         <Stream />
-      </div>
+      </div> */}
       <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
         <div className="lg:w-1/2 w-full grid">
           <img src={listGroupA} className="m-auto w-full h-auto items-center" />
@@ -111,6 +114,7 @@ export const Home = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
