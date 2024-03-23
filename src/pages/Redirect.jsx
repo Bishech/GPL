@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { setUserToken } from "../stores/user";
 
 export const Redirect = () => {
   const navigate = useNavigate();
   const { token } = useParams();
 
   useEffect(() => {
-    localStorage.setItem("authToken", token);
+    setUserToken(token);
     navigate("/");
   }, []);
 
