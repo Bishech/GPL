@@ -8,10 +8,7 @@ export const GameData = ({
 }) => {
   return (
     <div className="text-center">
-      <button
-        disabled
-        className="skew-x-[-5deg] cursor-default bg-gray-700 border-2 rounded-lg w-2/3 h-44 border-black"
-      >
+      <button className="skew-x-[-5deg] cursor-default bg-gray-700 border-2 rounded-lg w-2/3 h-44 border-black">
         <div className="h-full w-full border-2  border-black rounded-lg border-b-[18px] border-b-slate-800 border-t-[18px] border-t-slate-600 relative border-x-transparent">
           <div className="w-full h-full flex flex-row gap-10 px-6 justify-center items-center">
             <div>
