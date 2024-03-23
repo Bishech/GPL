@@ -37,7 +37,7 @@ export const PartnersProPlayer = ({
             Побед: {victories}
           </div>
         </div>
-        <PlayerStats KD={14} DPS={148} MVP={4} />
+        <PlayerStats />
         <ContactPlayer />
       </div>
     </div>
