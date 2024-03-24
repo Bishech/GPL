@@ -1,12 +1,12 @@
 import React from "react";
 
-export const DefaultPlayer = ({ playerImg, playerName, teamName }) => {
+export const DefaultPlayer = ({ id, avatar, name, teamName, type }) => {
   return (
     <div className="flex md:flex-row md:items-start flex-col-reverse gap-10 items-center">
       <div className="lg:w-1/2 w-full flex flex-col justify-center items-center">
-        <img src={playerImg} className="lg:w-2/3 w-full object-contain" />
+        <img src={avatar} className="lg:w-2/3 w-full object-contain" />
         <p className="bg-white text-blue-800 text-center text-2xl min-[350px]:text-4xl p-2 max-w-44 skew-x-[-5deg] shadow-lg shadow-black -mt-10 md:-mt-16 text-wrap">
-          {playerName}
+          {name}
         </p>
       </div>
       <div className="flex flex-col justify-start lg:w-1/2 w-full content-center gap-2">

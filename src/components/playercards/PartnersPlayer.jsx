@@ -4,11 +4,14 @@ import { ContactPlayer } from "./ContactPlayer";
 import partnersLogo from "../../assets/partners-item.png";
 
 export const PartnersPlayer = ({
-  playerImg,
-  playerName,
+  id,
+  type,
+  avatar,
+  name,
   teamName,
-  matches,
-  victories,
+  gameCount,
+  winCount,
+  telegramLink,
 }) => {
   return (
     <div className="flex md:flex-row md:items-start flex-col gap-10 items-center">
@@ -16,9 +19,9 @@ export const PartnersPlayer = ({
         <div className="lg:w-2/3 object-contain mb-4">
           <img src={partnersLogo} />
         </div>
-        <img src={playerImg} className="lg:w-2/3 w-full object-contain" />
+        <img src={avatar} className="lg:w-2/3 w-full object-contain" />
         <p className="bg-white text-blue-800 text-center text-2xl min-[350px]:text-4xl p-2 max-w-44 skew-x-[-5deg] shadow-lg shadow-black -mt-10 md:-mt-16 text-wrap">
-          {playerName}
+          {name}
         </p>
       </div>
       <div className="flex flex-col justify-start lg:w-1/2 w-full content-center gap-2">
@@ -30,13 +33,13 @@ export const PartnersPlayer = ({
             Команда: {teamName}
           </div>
           <div className="text-center bg-blue-600 min-[470px]:text-3xl text-2xl skew-x-[-5deg] border-t-4  border-r-4 border-r-blue-500">
-            Матчей: {matches}
+            Матчей: {gameCount}
           </div>
           <div className="text-center bg-blue-600 min-[470px]:text-3xl text-2xl skew-x-[-5deg] border-t-4 border-r-4 border-r-blue-500">
-            Побед: {victories}
+            Побед: {winCount}
           </div>
         </div>
-        <ContactPlayer />
+        <ContactPlayer telegramLink={telegramLink} />
       </div>
     </div>
   );

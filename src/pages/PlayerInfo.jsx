@@ -1,19 +1,72 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import playerImg from "../assets/player-image.png";
 
 import { DefaultPlayer } from "../components/playercards/DefaultPlayer";
+import { PartnersPlayer } from "../components/playercards/PartnersPlayer";
+import { PartnersProPlayer } from "../components/playercards/PartnersProPlayer";
+
+import { Loader } from "../components/UI/Loader/Loader";
 
 export const PlayerInfo = () => {
-  const { teamName, playerName } = useParams();
+  const { teamId, id } = useParams();
 
-  return (
+  const [player, setPlayer] = useState(null);
+
+  async function getPlayerInfo(teamId, id) {
+    const req = await fetch(
+      `https://gpl.animaru.app/teams/${teamId}/players/${id}/`
+    );
+    const data = await req.json();
+    setPlayer(data);
+  }
+
+  useEffect(() => {
+    getPlayerInfo(teamId, id);
+  }, []);
+
+  return player == null ? (
+    <Loader />
+  ) : (
     <div>
-      <DefaultPlayer
-        playerImg={playerImg}
-        playerName={playerName}
-        teamName={teamName}
-      />
+      {player.type == "None" && (
+        <DefaultPlayer
+          id={id}
+          type={player.type}
+          avatar={player.avatar}
+          name={player.name}
+          teamName={player.teamName}
+        />
+      )}
+      {player.type == "Partners" && (
+        <PartnersPlayer
+          id={id}
+          type={player.type}
+          avatar={player.avatar}
+          name={player.name}
+          teamName={player.teamName}
+          gameCount={player.gameCount}
+          winCount={player.winCount}
+          telegramLink={player.telegramLink}
+        />
+      )}
+      {player.type == "PartnersPro" && (
+        <PartnersProPlayer
+          id={id}
+          type={player.type}
+          avatar={player.avatar}
+          name={player.name}
+          teamName={player.teamName}
+          kd={player.kd}
+          winRate={player.winRate}
+          dps={player.dps}
+          mvpCount={player.mvpCount}
+          kills={player.kills}
+          deaths={player.deaths}
+          gameCount={player.gameCount}
+          winCount={player.winCount}
+          telegramLink={player.telegramLink}
+        />
+      )}
     </div>
   );
 };
