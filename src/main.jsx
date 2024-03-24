@@ -21,7 +21,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "team/:group/:name",
+        path: "team/:group/:id",
         element: <TeamInfo />,
       },
       {
