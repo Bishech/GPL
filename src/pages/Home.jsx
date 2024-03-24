@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import logo from "../assets/team-logo.png";
 import gplLogo from "../assets/logo-gpl.svg";
@@ -9,112 +9,110 @@ import listGroupD from "../assets/leader-board-group-D.png";
 
 import { Team } from "../components/Team";
 import { Footer } from "../components/Footer";
-
-// import { Stream } from "../components/Stream";
-
-const groupA = [
-  { id: 1, name: "firstTeam", group: "a", points: 0, logo: logo },
-  { id: 2, name: "secondTeam", group: "a", points: 0, logo: logo },
-  { id: 3, name: "thirdTeam", group: "a", points: 0, logo: logo },
-  { id: 4, name: "fourthTeam", group: "a", points: 0, logo: logo },
-  { id: 5, name: "fifthTeam", group: "a", points: 0, logo: logo },
-];
-
-const groupB = [
-  { id: 1, name: "firstTeam", group: "b", points: 0, logo: logo },
-  { id: 2, name: "secondTeam", group: "b", points: 0, logo: logo },
-  { id: 3, name: "thirdTeam", group: "b", points: 0, logo: logo },
-  { id: 4, name: "fourthTeam", group: "b", points: 0, logo: logo },
-  { id: 5, name: "fifthTeam", group: "b", points: 0, logo: logo },
-];
-
-const groupC = [
-  { id: 1, name: "firstTeam", group: "c", points: 0, logo: logo },
-  { id: 2, name: "secondTeam", group: "c", points: 0, logo: logo },
-  { id: 3, name: "thirdTeam", group: "c", points: 0, logo: logo },
-  { id: 4, name: "fourthTeam", group: "c", points: 0, logo: logo },
-  { id: 5, name: "fifthTeam", group: "c", points: 0, logo: logo },
-];
-
-const groupD = [
-  { id: 1, name: "GPL eSports", group: "d", points: 0, logo: gplLogo },
-  { id: 2, name: "secondTeam", group: "d", points: 0, logo: logo },
-  { id: 3, name: "thirdTeam", group: "d", points: 0, logo: logo },
-  { id: 4, name: "fourthTeam", group: "d", points: 0, logo: logo },
-  { id: 5, name: "fifthTeam", group: "d", points: 0, logo: logo },
-];
+import { Loader } from "../components/UI/Loader/Loader";
+import { useUnit } from "effector-react";
+import { $teams, fetchTeamsFx } from "../stores/teams";
 
 export const Home = () => {
+  const teams = useUnit($teams);
+
+  const groupA = teams.filter((item) => item.group === "A");
+  const groupB = teams.filter((item) => item.group === "B");
+  const groupC = teams.filter((item) => item.group === "C");
+  const groupD = teams.filter((item) => item.group === "D");
+
+  useEffect(() => {
+    fetchTeamsFx();
+  }, [teams]);
+
   return (
     <div className="flex flex-col gap-20 mb-20">
       {/* <div className="flex items-center justify-center object-contain">
         <Stream />
       </div> */}
-      <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
-        <div className="lg:w-1/2 w-full grid">
-          <img src={listGroupA} className="m-auto w-full h-auto items-center" />
-        </div>
-        <div className="flex flex-col gap-4 lg:w-1/2 w-full">
-          {groupA.map((team) => (
-            <Team
-              key={team.id}
-              group={team.group}
-              name={team.name}
-              logo={team.logo}
-              points={team.points}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
-        <div className="lg:w-1/2 w-full grid">
-          <img src={listGroupB} className="m-auto w-full h-auto items-center" />
-        </div>
-        <div className="flex flex-col gap-4 lg:w-1/2 w-full">
-          {groupB.map((team) => (
-            <Team
-              key={team.id}
-              group={team.group}
-              name={team.name}
-              logo={team.logo}
-              points={team.points}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
-        <div className="lg:w-1/2 w-full grid">
-          <img src={listGroupC} className="m-auto w-full h-auto items-center" />
-        </div>
-        <div className="flex flex-col gap-4 lg:w-1/2 w-full">
-          {groupC.map((team) => (
-            <Team
-              key={team.id}
-              group={team.group}
-              name={team.name}
-              logo={team.logo}
-              points={team.points}
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
-        <div className="lg:w-1/2 w-full grid">
-          <img src={listGroupD} className="m-auto w-full h-auto items-center" />
-        </div>
-        <div className="flex flex-col gap-4 lg:w-1/2 w-full">
-          {groupD.map((team) => (
-            <Team
-              key={team.id}
-              group={team.group}
-              name={team.name}
-              logo={team.logo}
-              points={team.points}
-            />
-          ))}
-        </div>
-      </div>
-      <Footer />
+      {teams.length === 0 ? (
+        <Loader />
+      ) : (
+        <>
+          <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
+            <div className="lg:w-1/2 w-full grid">
+              <img
+                src={listGroupA}
+                className="m-auto w-full h-auto items-center"
+              />
+            </div>
+            <div className="flex flex-col gap-4 lg:w-1/2 w-full">
+              {groupA.map((team) => (
+                <Team
+                  key={team.id}
+                  group={team.group}
+                  name={team.name}
+                  logo={team.logo}
+                  points={team.points}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
+            <div className="lg:w-1/2 w-full grid">
+              <img
+                src={listGroupB}
+                className="m-auto w-full h-auto items-center"
+              />
+            </div>
+            <div className="flex flex-col gap-4 lg:w-1/2 w-full">
+              {groupB.map((team) => (
+                <Team
+                  key={team.id}
+                  group={team.group}
+                  name={team.name}
+                  logo={team.logo}
+                  points={team.points}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
+            <div className="lg:w-1/2 w-full grid">
+              <img
+                src={listGroupC}
+                className="m-auto w-full h-auto items-center"
+              />
+            </div>
+            <div className="flex flex-col gap-4 lg:w-1/2 w-full">
+              {groupC.map((team) => (
+                <Team
+                  key={team.id}
+                  group={team.group}
+                  name={team.name}
+                  logo={team.logo}
+                  points={team.points}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row gap-2 w-full lg:px-10 justify-center items-center">
+            <div className="lg:w-1/2 w-full grid">
+              <img
+                src={listGroupD}
+                className="m-auto w-full h-auto items-center"
+              />
+            </div>
+            <div className="flex flex-col gap-4 lg:w-1/2 w-full">
+              {groupD.map((team) => (
+                <Team
+                  key={team.id}
+                  group={team.group}
+                  name={team.name}
+                  logo={team.logo}
+                  points={team.points}
+                />
+              ))}
+            </div>
+          </div>
+        </>
+      )}
+      {teams.length === 0 ? <div></div> : <Footer />}
     </div>
   );
 };
