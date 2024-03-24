@@ -29,12 +29,12 @@ export const Header = () => {
             </p>
           </Link>
         </div>
-        <button
+        {/* <button
           onClick={!token ? redirect : logOut}
-          className="px-4 text-lg sm:px-8 sm:text-xl skew-x-[-5deg] font-extra relative top-4 h-12 bg-neutral-900 hover:bg-neutral-800 border-2 rounded-lg shadow-md shadow-black border-yellow-400 text-white flex justify-end items-center mr-10 sm:mr-14"
+          className=" px-4 text-lg sm:px-8 sm:text-xl skew-x-[-5deg] font-extra relative top-4 h-12 bg-neutral-900 hover:bg-neutral-800 border-2 rounded-lg shadow-md shadow-black border-yellow-400 text-white flex justify-end items-center mr-10 sm:mr-14"
         >
           <div>{!token ? <div>Войти</div> : <div>Выйти</div>}</div>
-        </button>
+        </button> */}
       </div>
     </div>
   );
