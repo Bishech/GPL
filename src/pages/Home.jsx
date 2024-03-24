@@ -23,7 +23,7 @@ export const Home = () => {
 
   useEffect(() => {
     fetchTeamsFx();
-  }, [teams]);
+  }, []);
 
   return (
     <div className="flex flex-col gap-20 mb-20">
@@ -44,6 +44,7 @@ export const Home = () => {
             <div className="flex flex-col gap-4 lg:w-1/2 w-full">
               {groupA.map((team) => (
                 <Team
+                  id={team.id}
                   key={team.id}
                   group={team.group}
                   name={team.name}
@@ -63,6 +64,7 @@ export const Home = () => {
             <div className="flex flex-col gap-4 lg:w-1/2 w-full">
               {groupB.map((team) => (
                 <Team
+                  id={team.id}
                   key={team.id}
                   group={team.group}
                   name={team.name}
@@ -82,6 +84,7 @@ export const Home = () => {
             <div className="flex flex-col gap-4 lg:w-1/2 w-full">
               {groupC.map((team) => (
                 <Team
+                  id={team.id}
                   key={team.id}
                   group={team.group}
                   name={team.name}
@@ -101,6 +104,7 @@ export const Home = () => {
             <div className="flex flex-col gap-4 lg:w-1/2 w-full">
               {groupD.map((team) => (
                 <Team
+                  id={team.id}
                   key={team.id}
                   group={team.group}
                   name={team.name}
