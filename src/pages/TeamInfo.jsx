@@ -1,21 +1,29 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { TeamCard } from "../components/TeamCard";
-import logo from "../assets/team-logo.png";
-import playerImg from "../assets/player-image.png";
+import React, { useEffect, useState } from "react";
 
-const players = [
-  { name: "playerName", img: playerImg, id: 1 },
-  { name: "playerName", img: playerImg, id: 2 },
-  { name: "playerName", img: playerImg, id: 3 },
-];
+import { useParams } from "react-router-dom";
+
+import { TeamCard } from "../components/TeamCard";
+import { Loader } from "../components/UI/Loader/Loader";
 
 export const TeamInfo = () => {
-  const { name } = useParams();
+  const { id } = useParams();
 
-  return (
+  const [team, setTeam] = useState(null);
+
+  async function getTeamInfo(id) {
+    const req = await fetch(`https://gpl.animaru.app/teams/${id}/`);
+    const data = await req.json();
+    setTeam(data);
+  }
+
+  useEffect(() => {
+    getTeamInfo(id);
+  }, []);
+  return team == null ? (
+    <Loader />
+  ) : (
     <div>
-      <TeamCard logo={logo} players={players} name={name} />
+      <TeamCard logo={team.logo} name={team.name} players={team.players} />
     </div>
   );
 };
