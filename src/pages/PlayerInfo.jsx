@@ -44,8 +44,8 @@ export const PlayerInfo = () => {
           avatar={player.avatar}
           name={player.name}
           teamName={player.teamName}
-          gameCount={player.gameCount}
-          winCount={player.winCount}
+          gameCount={player.stats.gameCount}
+          winCount={player.stats.winCount}
           telegramLink={player.telegramLink}
         />
       )}
@@ -56,14 +56,14 @@ export const PlayerInfo = () => {
           avatar={player.avatar}
           name={player.name}
           teamName={player.teamName}
-          kd={player.kd}
-          winRate={player.winRate}
-          dps={player.dps}
-          mvpCount={player.mvpCount}
-          kills={player.kills}
-          deaths={player.deaths}
-          gameCount={player.gameCount}
-          winCount={player.winCount}
+          kd={player.stats.kd}
+          winRate={player.stats.winRate}
+          dps={player.stats.dps}
+          mvpCount={player.stats.mvpCount}
+          kills={player.stats.kills}
+          deaths={player.stats.deaths}
+          gameCount={player.stats.gameCount}
+          winCount={player.stats.winCount}
           telegramLink={player.telegramLink}
         />
       )}
