@@ -6,7 +6,6 @@ import partnersProLogo from "../../assets/partners-pro-item.png";
 
 export const PartnersProPlayer = ({
   playerImg,
-  playerName,
   teamName,
   matches,
   victories,
@@ -18,9 +17,6 @@ export const PartnersProPlayer = ({
           <img src={partnersProLogo} />
         </div>
         <img src={playerImg} className="lg:w-2/3 w-full object-contain" />
-        <p className="bg-white text-blue-800 text-center text-2xl min-[350px]:text-4xl p-2 max-w-44 skew-x-[-5deg] shadow-lg shadow-black -mt-10 md:-mt-16 text-wrap">
-          {playerName}
-        </p>
       </div>
       <div className="flex flex-col justify-start lg:w-1/2 w-full content-center gap-2">
         <div className="md:grid md:grid-col-6 flex flex-col gap-4 content-center md:items-center">
