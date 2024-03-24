@@ -23,7 +23,12 @@ export const TeamInfo = () => {
     <Loader />
   ) : (
     <div>
-      <TeamCard logo={team.logo} name={team.name} players={team.players} />
+      <TeamCard
+        logo={team.logo}
+        name={team.name}
+        players={team.players}
+        teamId={id}
+      />
     </div>
   );
 };

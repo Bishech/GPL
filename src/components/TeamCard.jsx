@@ -1,7 +1,7 @@
 import React from "react";
 import { Player } from "./Player";
 
-export const TeamCard = ({ logo, players, name }) => {
+export const TeamCard = ({ logo, players, name, teamId }) => {
   return (
     <div className="w-full flex flex-col justify-center items-center gap-5 -mt-10">
       <div className="flex lg:flex-row flex-col justify-between items-center lg:gap-32">
@@ -13,9 +13,11 @@ export const TeamCard = ({ logo, players, name }) => {
       <div className="flex md:flex-row flex-col items-center justify-center flex-wrap gap-20">
         {players.map((player) => (
           <Player
-            playerImg={player.img}
-            playerName={player.name}
-            teamName={name}
+            avatar={player.avatar}
+            name={player.name}
+            id={player.id}
+            teamId={teamId}
+            key={player.id}
           />
         ))}
       </div>

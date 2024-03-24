@@ -21,11 +21,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "team/:group/:id",
+        path: "teams/:id",
         element: <TeamInfo />,
       },
       {
-        path: "player/:teamName/:playerName",
+        path: "teams/:teamId/:players/:id",
         element: <PlayerInfo />,
       },
       {

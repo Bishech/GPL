@@ -12,7 +12,7 @@ const groupColor = {
 export const Team = ({ logo, name, points, group, id }) => {
   return (
     <button className="skew-x-[-5deg] cursor-default bg-gray-700 rounded-lg h-16 border-2 border-black relative text-white">
-      <Link to={`/team/${group}/${id}`}>
+      <Link to={`/teams/${id}`}>
         <div
           className={`before:w-4 before:rounded before:h-full before:-top-[1px] after:border-y-4 after:border-black before:absolute before:left-0 before:border-t-[8px] before:border-b-[8px] ${groupColor[group]} w-full h-full  rounded-lg border-b-[8px] border-b-slate-800 border-t-[8px] border-t-slate-600 border-x-transparent`}
         >
