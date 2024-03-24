@@ -18,6 +18,7 @@ body {
   margin: 0;
   background-color: #474747;
   padding-top: 120px;
+  padding-bottom: 20px;
 }
 
 @layer components {
