@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 import { TeamCard } from "../components/TeamCard";
 import { Loader } from "../components/UI/Loader/Loader";
+import { LastGames } from "../components/games/LastGames";
 
 export const TeamInfo = () => {
   const { id } = useParams();
@@ -29,6 +30,7 @@ export const TeamInfo = () => {
         players={team.players}
         teamId={id}
       />
+      {team.rounds.length == 0 ? <></> : <LastGames rounds={team.rounds} />}
     </div>
   );
 };
