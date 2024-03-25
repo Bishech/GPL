@@ -30,7 +30,7 @@ export const PlayerStats = ({
         Все смерти: {deaths}
       </div>
       <div className="bg-blue-600 text-3xl text-center px-2 skew-x-[-5deg] border-t-4 border-r-4  border-r-blue-500">
-        Win Rate: {winRate}
+        Win Rate: {winRate}%
       </div>
       {/* <div className="bg-blue-600 text-3xl text-center col-span-3 px-2 skew-x-[-5deg] border-t-4 border-r-4  border-r-blue-500">
         Любимый бравлер: {favoriteBrawler}
