@@ -12,7 +12,7 @@ export const TeamInfo = () => {
   const [team, setTeam] = useState(null);
 
   async function getTeamInfo(id) {
-    const req = await fetch(`https://gpl.animaru.app/teams/${id}/`);
+    const req = await fetch(`https://api.gpltournaments.xyz/teams/${id}/`);
     const data = await req.json();
     setTeam(data);
   }

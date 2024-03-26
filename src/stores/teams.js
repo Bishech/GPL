@@ -1,7 +1,7 @@
 import { createEffect, createStore } from "effector";
 
 export const fetchTeamsFx = createEffect(async () => {
-  const req = await fetch(`https://gpl.animaru.app/teams/`);
+  const req = await fetch("https://api.gpltournaments.xyz/teams/");
   return req.json();
 });
 

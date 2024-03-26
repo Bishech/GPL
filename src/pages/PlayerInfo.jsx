@@ -14,7 +14,7 @@ export const PlayerInfo = () => {
 
   async function getPlayerInfo(teamId, id) {
     const req = await fetch(
-      `https://gpl.animaru.app/teams/${teamId}/players/${id}/`
+      `https://api.gpltournaments.xyz/${teamId}/players/${id}/`
     );
     const data = await req.json();
     setPlayer(data);
