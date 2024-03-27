@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 const styles = {
   Partners: "mt-4",
@@ -9,14 +10,16 @@ const styles = {
 export const PlayerItem = ({ avatar, name, kd, dps, id, isMvp, type }) => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="flex flex-col items-center">
-        <img src={avatar} className="w-40 h-40 object-contain" />
-        {avatar.includes("none") && (
-          <p className="bg-white text-blue-800 text-center text-2xl w-28 skew-x-[-5deg] shadow-lg shadow-black -mt-16 md:-mt-12 text-wrap">
-            {name}
-          </p>
-        )}
-      </div>
+      <Link to={`/players/${id}`}>
+        <div className="flex flex-col items-center">
+          <img src={avatar} className="w-40 h-40 object-contain" />
+          {avatar.includes("none") && (
+            <p className="bg-white text-blue-800 text-center text-2xl w-28 skew-x-[-5deg] shadow-lg shadow-black -mt-16 md:-mt-12 text-wrap">
+              {name}
+            </p>
+          )}
+        </div>
+      </Link>
       {type === "None" ? (
         <></>
       ) : (
