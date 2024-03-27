@@ -22,14 +22,16 @@ export const Team = ({ logo, name, points, group, id }) => {
                 <img src={logo} className="pl-2 w-14 h-14 object-contain" />
               </picture>
             </div>
-            <div className="lg:text-4xl md:text-3xl sm:text-xl text-lg uppercase text-wrap">
+            <div className="lg:text-4xl md:text-3xl sm:text-xl text-lg uppercase text-wrap drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
               {name}
             </div>
             <div className="flex flex-grow"></div>
             <div>
               <img src={logo_gpl} className="w-12 h-12 object-contain" />
             </div>
-            <div className="lg:text-4xl md:text-3xl text-xl">{points}</div>
+            <div className="lg:text-4xl md:text-3xl text-xl drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+              {points}
+            </div>
           </div>
         </div>
       </Link>

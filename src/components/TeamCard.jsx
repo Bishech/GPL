@@ -9,7 +9,7 @@ export const TeamCard = ({ logo, players, name, teamId }) => {
           src={logo}
           className="lg:w-64 md:w-60 w-48 lg:h-64 md:h-60 h-48 object-contain"
         />
-        <h1 className="lg:text-8xl md:text-7xl text-5xl text-center text-white uppercase">
+        <h1 className="lg:text-8xl md:text-7xl text-5xl text-center text-white uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
           {name}
         </h1>
       </div>
