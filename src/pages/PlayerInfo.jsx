@@ -8,20 +8,18 @@ import { PartnersProPlayer } from "../components/playercards/PartnersProPlayer";
 import { Loader } from "../components/UI/Loader/Loader";
 
 export const PlayerInfo = () => {
-  const { teamId, id } = useParams();
+  const { id } = useParams();
 
   const [player, setPlayer] = useState(null);
 
-  async function getPlayerInfo(teamId, id) {
-    const req = await fetch(
-      `https://api.gpltournaments.xyz/teams/${teamId}/players/${id}`
-    );
+  async function getPlayerInfo(id) {
+    const req = await fetch(`https://api.gpltournaments.xyz/players/${id}/`);
     const data = await req.json();
     setPlayer(data);
   }
 
   useEffect(() => {
-    getPlayerInfo(teamId, id);
+    getPlayerInfo(id);
   }, []);
 
   return player == null ? (

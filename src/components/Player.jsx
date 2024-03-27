@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Player = ({ avatar, name, teamId, id }) => {
+export const Player = ({ avatar, name, id }) => {
   return (
-    <Link to={`/teams/${teamId}/players/${id}`}>
+    <Link to={`/players/${id}`}>
       <div className="flex flex-col items-center">
         <img src={avatar} className="w-72 h-72 object-contain" />
         {avatar.includes("none") && (
