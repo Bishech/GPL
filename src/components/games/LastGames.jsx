@@ -23,6 +23,7 @@ export const LastGames = ({ rounds }) => {
               secondTeamId={secondTeam.id}
               secondTeamLogo={secondTeam.logo}
               secondTeamPoints={secondTeam.winsCount}
+              isDetail={round.isDetail}
             />
           );
         })}

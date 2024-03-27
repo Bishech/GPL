@@ -9,6 +9,7 @@ import { Home } from "./pages/Home";
 import { TeamInfo } from "./pages/TeamInfo";
 import { PlayerInfo } from "./pages/PlayerInfo";
 import { Redirect } from "./pages/Redirect";
+import { GameStats } from "./pages/GameStats";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "auth/:token",
         element: <Redirect />,
+      },
+      {
+        path: "round/:id",
+        element: <GameStats />,
       },
     ],
   },
