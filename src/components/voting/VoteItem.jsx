@@ -14,7 +14,13 @@ import { ChoiceItem } from "./ChoiceItem";
 //   ]
 // }
 
-export const VoteItem = ({ teams, id, onSelectTeam, selectedTeamId }) => {
+export const VoteItem = ({
+  teams,
+  id,
+  onSelectTeam,
+  selectedTeamId,
+  isReadonly,
+}) => {
   const [activeIndex, setActiveIndex] = useState(selectedTeamId);
 
   return (
@@ -28,8 +34,10 @@ export const VoteItem = ({ teams, id, onSelectTeam, selectedTeamId }) => {
           side={i == 0 ? "red" : "blue"}
           isActive={activeIndex != null ? activeIndex == team.id : false}
           handleClick={() => {
-            setActiveIndex(team.id);
-            onSelectTeam(team.id);
+            if (isReadonly) {
+              setActiveIndex(team.id);
+              onSelectTeam(team.id);
+            }
           }}
         />
       ))}

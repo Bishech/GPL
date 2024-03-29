@@ -35,6 +35,7 @@ export const VoteList = ({ id, votes }) => {
           key={vote.id}
           teams={vote.teams}
           id={vote.id}
+          isReadonly={vote.isReadonly}
           selectedTeamId={vote.selectedTeamId}
           onSelectTeam={(teamId) => {
             setList(
