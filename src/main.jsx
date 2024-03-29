@@ -10,6 +10,8 @@ import { TeamInfo } from "./pages/TeamInfo";
 import { PlayerInfo } from "./pages/PlayerInfo";
 import { Redirect } from "./pages/Redirect";
 import { GameStats } from "./pages/GameStats";
+import { Voting } from "./pages/Voting";
+import { TournamentGrid } from "./pages/TournamentGrid";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
       {
         path: "round/:id",
         element: <GameStats />,
+      },
+      {
+        path: "votes",
+        element: <Voting />,
+      },
+      {
+        path: "grid",
+        element: <TournamentGrid />,
       },
     ],
   },

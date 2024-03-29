@@ -6,7 +6,7 @@ import { useUnit } from "effector-react";
 
 export const Header = () => {
   const redirect = () => {
-    window.location.replace("https://gpl.animaru.app/auth/google");
+    window.location.replace("https://api.gpltournaments.xyz/auth/google");
   };
 
   const token = useUnit($userToken);
@@ -29,12 +29,26 @@ export const Header = () => {
             </p>
           </Link>
         </div>
-        {/* <button
-          onClick={!token ? redirect : logOut}
-          className=" px-4 text-lg sm:px-8 sm:text-xl skew-x-[-5deg] font-extra relative top-4 h-12 bg-neutral-900 hover:bg-neutral-800 border-2 rounded-lg shadow-md shadow-black border-yellow-400 text-white flex justify-end items-center mr-10 sm:mr-14"
-        >
-          <div>{!token ? <div>Войти</div> : <div>Выйти</div>}</div>
-        </button> */}
+        <nav className="flex items-center md:mr-10 mr-4">
+          <ul className="inline-flex items-center">
+            <li className="cursor-pointer transition-all duration-300 text-slate-100 md:text-xl text-md font-extra inline-block py-3 px-2 border-b-2 border-transparent hover:border-yellow-400 hover:text-yellow-400">
+              <Link to={`/grid`}>Сетка</Link>
+            </li>
+            {!token ? (
+              <></>
+            ) : (
+              <li className="cursor-pointer transition-all duration-300 text-slate-100 md:text-xl text-md font-extra inline-block py-3 px-2 border-b-2 border-transparent hover:border-yellow-400 hover:text-yellow-400">
+                <Link to={`/votes`}>Прогнозы</Link>
+              </li>
+            )}
+            <li
+              onClick={!token ? redirect : logOut}
+              className="cursor-pointer transition-all duration-300 text-slate-100 md:text-xl text-md font-extra inline-block py-3 px-1 border-b-2 border-transparent hover:border-yellow-400 hover:text-yellow-400"
+            >
+              {!token ? "Войти" : "Выйти"}
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   );
