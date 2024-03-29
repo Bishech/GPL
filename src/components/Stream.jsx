@@ -14,7 +14,7 @@ export const Stream = () => {
       opts={opts}
       onReady={onPlayerReady}
       className="youtubeContainer"
-      videoId="JatZmzsBBdc"
+      videoId="6gpvnHW1Xts"
     />
   );
 };

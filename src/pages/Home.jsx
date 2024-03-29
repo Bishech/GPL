@@ -39,7 +39,7 @@ export const Home = () => {
       )}
       <div className="lg:w-1/2 md:2/3 w-full">
         <div className="md:text-3xl text-2xl text-slate-100 drop-shadow-[0_2px_2px_rgba(0,0,0,1)] text-center mb-5">
-          GPL Season 8 | PlayOFF | День 1 - 1/8 Финала
+          GPL Season 8 | PlayOFF | День 2 - ФИНАЛ
         </div>
         <Stream />
       </div>
