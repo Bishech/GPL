@@ -47,12 +47,15 @@ export const VoteList = ({ id, votes }) => {
         />
       ))}
       <div className="text-center">
-        <button
+        {/* <button
           onClick={sendVote}
           className="md:text-2xl text-xl md:w-1/3 w-1/2 font-extra text-slate-200 drop-shadow-[0_2px_2px_rgba(0,0,0,1)] text-center p-2 skew-x-[-5deg] bg-neutral-900 hover:bg-neutral-800 border-2 rounded-lg shadow-md shadow-black border-yellow-400"
         >
           Отправить
-        </button>
+        </button> */}
+        <div className="md:text-3xl text-xl text-slate-100 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
+          Прогнозы сегодняшнего дня завершены.
+        </div>
       </div>
     </div>
   );
