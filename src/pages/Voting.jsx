@@ -40,7 +40,11 @@ export const Voting = () => {
       <div className="text-5xl text-center text-slate-100 drop-shadow-[0_2px_2px_rgba(0,0,0,1)]">
         {votes.name}
       </div>
-      <VoteList votes={votes.votes} id={votes.id} />
+      <VoteList
+        votes={votes.votes}
+        id={votes.id}
+        isReadonly={votes.isReadonly}
+      />
     </div>
   );
 };

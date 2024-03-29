@@ -34,7 +34,7 @@ export const VoteItem = ({
           side={i == 0 ? "red" : "blue"}
           isActive={activeIndex != null ? activeIndex == team.id : false}
           handleClick={() => {
-            if (isReadonly) {
+            if (!isReadonly) {
               setActiveIndex(team.id);
               onSelectTeam(team.id);
             }
