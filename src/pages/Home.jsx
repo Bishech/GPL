@@ -8,7 +8,6 @@ import listGroupD from "../assets/leader-board-group-D.png";
 import { Team } from "../components/Team";
 import { Footer } from "../components/Footer";
 import { Loader } from "../components/UI/Loader/Loader";
-import { Stream } from "../components/Stream";
 
 import { useUnit } from "effector-react";
 import { $teams, fetchTeamsFx } from "../stores/teams";
@@ -37,12 +36,7 @@ export const Home = () => {
       ) : (
         <></>
       )}
-      <div className="lg:w-1/2 md:2/3 w-full">
-        <div className="md:text-3xl text-2xl text-slate-100 drop-shadow-[0_2px_2px_rgba(0,0,0,1)] text-center mb-5">
-          GPL Season 8 | PlayOFF | День 2 - ФИНАЛ
-        </div>
-        <Stream />
-      </div>
+      <div className="lg:w-1/2 md:2/3 w-full"></div>
       {teams.length === 0 ? (
         <Loader />
       ) : (
