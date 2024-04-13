@@ -26,7 +26,7 @@ export const Footer = () => {
           </div>
         </a>
 
-        <a href="https://discord.gg/buvuDK332K">
+        <a href="https://discord.gg/XmnYn3KnZw">
           <div className="w-full h-full flex flex-row gap-3 justify-center items-center">
             <div>
               <svg
